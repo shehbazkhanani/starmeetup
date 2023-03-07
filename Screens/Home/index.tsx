@@ -356,12 +356,22 @@ const Home = ({navigation}: any) => {
     },
   ];
 
+  const navigateToOtherScreen = (name : any) => {
+    let firstLetter = name.slice(0,1)
+    firstLetter = (firstLetter).toUpperCase()
+    let otherLetter = name.slice(1)
+    console.log(firstLetter,"first")
+      console.log(name,"name")
+    let fullName = firstLetter + otherLetter
+    navigation.navigate(`${fullName}Screen`)
+  }
+
   const renderCategoriesItems = ({item}: any): any => {
     return(
     <View style={{ paddingHorizontal: 2,  marginBottom: 10 }}>
                 <TouchableOpacity
                     activeOpacity={0.8}
-                    onPress={user ? ()=>navigation.navigate('Categories') : () => navigation.navigate('Login')}
+                    onPress={user ? () =>  navigateToOtherScreen(item.name) : () => navigation.navigate('Login')}
                    >
                     <Image
                         source={item.image}
