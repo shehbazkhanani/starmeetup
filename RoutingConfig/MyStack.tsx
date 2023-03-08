@@ -18,6 +18,10 @@ import MentorsScreen from '../Screens/MentorsScreen';
 import AnchorsScreen from '../Screens/AnchorsScreen';
 import SportsScreen from '../Screens/SportsScreen';
 import TiktokScreen from '../Screens/TiktokScreen';
+import ForgotPassword from '../Screens/ForgotPassword';
+import Verification from '../Screens/Verification';
+import NewPassword from '../Screens/NewPassword';
+import Profile from '../Screens/Profile';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +37,9 @@ const MyStack = () => {
       <Stack.Screen name="Home" component={MyDrawer} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="SignUp" component={SignUp} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      <Stack.Screen name="Verification" component={Verification} />
+      <Stack.Screen name="NewPassword" component={NewPassword} />
       <Stack.Screen name="Notification" component={Notification} />
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="CreatorsScreen" component={CreatorsScreen} />
@@ -43,6 +50,7 @@ const MyStack = () => {
       <Stack.Screen name="AnchorsScreen" component={AnchorsScreen} />
       <Stack.Screen name="SportsScreen" component={SportsScreen} />
       <Stack.Screen name="TiktokScreen" component={TiktokScreen} />
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
     </NavigationContainer>
   )

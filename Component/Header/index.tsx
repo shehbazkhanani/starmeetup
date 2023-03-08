@@ -8,7 +8,7 @@ export type Props = {
 };
 
 const Header = (Props : any) => {
-  let {navigation, user, Drawer, backBtn ,Notification,title} = Props
+  let {navigation, user, Drawer, backBtn ,Notification,title,noSignUp,noLogo} = Props
   
   return (
     <View style={{
@@ -24,7 +24,7 @@ const Header = (Props : any) => {
       : backBtn ? <TouchableOpacity onPress={()=>navigation.goBack()}><Text><Icon name="md-chevron-back" size={30} color="black" /></Text></TouchableOpacity> : <View></View>}
       
       {title? <Text style={{fontFamily:'Poppins-Regular', fontSize:18, color:Color.mainColor, marginVertical:15}}>{title}</Text>
-      :
+      : noLogo ? <View></View> :
       <Image source={require('../../Images/ColorLogo.png')} resizeMode='contain' style={styles.logo} />
       }
       {Notification ?
@@ -36,13 +36,23 @@ const Header = (Props : any) => {
       
         :
         <>
+        {backBtn ?
+        <TouchableOpacity onPress={()=>navigation.goBack()}><Text><Icon name="md-chevron-back" size={30} color="black" />
+        </Text></TouchableOpacity> 
+      :
       <TouchableOpacity activeOpacity={0.8}  onPress={()=>navigation.navigate('Login')}>
       <Image source={require('../../Images/Login.png')} resizeMode='contain' style={styles.button} />
       </TouchableOpacity>
+      }
+      {title? <Text style={{fontFamily:'Poppins-Regular', fontSize:18, color:Color.mainColor, marginVertical:15}}>{title}</Text>
+      :
       <Image source={require('../../Images/ColorLogo.png')} resizeMode='contain' style={styles.logo} />
+    }
+      {noSignUp? <View></View> :
       <TouchableOpacity activeOpacity={0.8}  onPress={()=>navigation.navigate('SignUp')}>
       <Image source={require('../../Images/Signup.png')} resizeMode='contain' style={styles.button} />
       </TouchableOpacity>
+      }
       
       </>
       }

@@ -386,7 +386,7 @@ const Home = ({navigation}: any) => {
     return(
       <View style={{ paddingHorizontal: 5, marginTop: 10, marginBottom: 10 }}>
       <TouchableOpacity
-          // onPress={}
+          onPress={user ? ()=>navigation.navigate('Profile', {data : item})  : () => navigation.navigate('Login')}
           activeOpacity={0.8}
           style={{
               borderWidth: 0,
@@ -588,6 +588,7 @@ const Home = ({navigation}: any) => {
           Drawer={true}
           Notification
         />
+        {/* Search */}
         <View
           style={{
             width: Dimensions.get('window').width / 1.1,
@@ -608,6 +609,7 @@ const Home = ({navigation}: any) => {
             </Text>
           </TouchableOpacity>
         </View>
+        {/* Categories */}
         <View>
           <View
             style={{
@@ -632,7 +634,7 @@ const Home = ({navigation}: any) => {
               }}>
               <TouchableOpacity
               activeOpacity={0.8}
-              onPress={()=>navigation.navigate('Categories')}
+              onPress={user ? ()=>navigation.navigate('Categories') : () => navigation.navigate('Login')}
               >
                 <Text
                   style={{
@@ -682,7 +684,7 @@ const Home = ({navigation}: any) => {
               }}>
               <TouchableOpacity
               activeOpacity={0.8}
-              onPress={()=>navigation.navigate('CreatorsScreen')}
+              onPress={user ? ()=>navigation.navigate('CreatorsScreen')  : () => navigation.navigate('Login')}
               >
                 <Text
                   style={{
@@ -727,7 +729,7 @@ const Home = ({navigation}: any) => {
               }}>
               <TouchableOpacity
               activeOpacity={0.8}
-              onPress={()=>navigation.navigate('ComediansScreen')}
+              onPress={ user ? ()=>navigation.navigate('ComediansScreen')  : () => navigation.navigate('Login')}
               >
                 <Text
                   style={{
@@ -772,7 +774,7 @@ const Home = ({navigation}: any) => {
               }}>
               <TouchableOpacity
               activeOpacity={0.8}
-              onPress={()=>navigation.navigate('MusicScreen')}
+              onPress={ user ? ()=>navigation.navigate('MusicScreen')  : () => navigation.navigate('Login')}
               >
                 <Text
                   style={{
@@ -817,7 +819,7 @@ const Home = ({navigation}: any) => {
               }}>
               <TouchableOpacity
               activeOpacity={0.8}
-              onPress={()=>navigation.navigate('ActorsScreen')}
+              onPress={ user ? ()=>navigation.navigate('ActorsScreen')  : () => navigation.navigate('Login')}
               >
                 <Text
                   style={{
@@ -862,7 +864,7 @@ const Home = ({navigation}: any) => {
               }}>
               <TouchableOpacity
               activeOpacity={0.8}
-              onPress={()=>navigation.navigate('MentorsScreen')}
+              onPress={ user ? ()=>navigation.navigate('MentorsScreen')  : () => navigation.navigate('Login')}
               >
                 <Text
                   style={{
@@ -907,7 +909,7 @@ const Home = ({navigation}: any) => {
               }}>
               <TouchableOpacity
               activeOpacity={0.8}
-              onPress={()=>navigation.navigate('AnchorsScreen')}
+              onPress={ user ? ()=>navigation.navigate('AnchorsScreen')  : () => navigation.navigate('Login')}
               >
                 <Text
                   style={{
@@ -952,7 +954,7 @@ const Home = ({navigation}: any) => {
               }}>
               <TouchableOpacity
               activeOpacity={0.8}
-              onPress={()=>navigation.navigate('SportsScreen')}
+              onPress={ user ? ()=>navigation.navigate('SportsScreen')  : () => navigation.navigate('Login')}
               >
                 <Text
                   style={{
@@ -997,7 +999,7 @@ const Home = ({navigation}: any) => {
               }}>
               <TouchableOpacity
               activeOpacity={0.8}
-              onPress={()=>navigation.navigate('TiktokScreen')}
+              onPress={ user ? ()=>navigation.navigate('TiktokScreen')  : () => navigation.navigate('Login')}
               >
                 <Text
                   style={{
